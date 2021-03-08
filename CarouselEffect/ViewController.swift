@@ -22,7 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         floawLayout.sideItemAlpha = 1.0
         
         floawLayout.spacingMode = .fixed(spacing: 5.0)
-     
+        
         carouselCollectionView.collectionViewLayout = floawLayout
         carouselCollectionView.delegate = self
         carouselCollectionView.dataSource = self
@@ -42,6 +42,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
     }
-
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let layout = self.carouselCollectionView.collectionViewLayout as! UPCarouselFlowLayout
+        let pageSide = (layout.scrollDirection == .horizontal) ? self.pageSize.width : self.pageSize.height
+        let offset = (layout.scrollDirection == .horizontal) ? scrollView.contentOffset.x : scrollView.contentOffset.y
+        currentPage = Int(floor((offset - pageSide / 2) / pageSide) + 1)
+    }
+    fileprivate var currentPage: Int = 0 {
+        didSet {
+            print("page at centre = \(currentPage)")
+        }
+    }
+    fileprivate var pageSize: CGSize {
+        let layout = self.carouselCollectionView.collectionViewLayout as! UPCarouselFlowLayout
+        var pageSize = layout.itemSize
+        if layout.scrollDirection == .horizontal {
+            pageSize.width += layout.minimumLineSpacing
+        } else {
+            pageSize.height += layout.minimumLineSpacing
+        }
+        return pageSize
+    }
+    @IBAction func nowPageShowButtonAction(_ sender: Any) {
+        print("page at centre = \(currentPage)")
+    }
 }
 
