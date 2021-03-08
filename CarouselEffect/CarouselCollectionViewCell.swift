@@ -24,9 +24,8 @@ class CarouselCollectionViewCell: UICollectionViewCell {
             self.carouselView.layer.cornerRadius = 15
             self.carouselView.layer.shadowColor = UIColor.lightGray.cgColor
             self.carouselView.layer.shadowOpacity = 0.5
-            self.carouselView.layer.shadowRadius = 5.0
+            self.carouselView.layer.shadowRadius = 10.0
             self.carouselView.layer.shadowOffset = .zero
-            self.carouselView.layer.masksToBounds = false
             self.carouselView.layer.shadowPath = UIBezierPath(rect: self.carouselView.bounds).cgPath
             self.carouselView.layer.shouldRasterize = true
         }

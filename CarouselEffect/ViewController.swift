@@ -35,6 +35,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = carouselCollectionView.dequeueReusableCell(withReuseIdentifier:"carouselCell" , for: indexPath) as! CarouselCollectionViewCell
         cell.carouselTitle.text = "本のタイトル\(indexPath.row)"
         cell.carouselSubTitle.text = "サブタイトル-\(indexPath.row)"
+        cell.layer.masksToBounds = false
         
         return cell
     }
