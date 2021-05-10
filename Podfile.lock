@@ -1,0 +1,16 @@
+PODS:
+  - UPCarouselFlowLayout (1.1.2)
+
+DEPENDENCIES:
+  - UPCarouselFlowLayout
+
+SPEC REPOS:
+  trunk:
+    - UPCarouselFlowLayout
+
+SPEC CHECKSUMS:
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
+
+PODFILE CHECKSUM: 0857d59ee38757c58191f2c681edb9676699404b
+
+COCOAPODS: 1.10.1
