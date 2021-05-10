@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UPCarouselFlowLayout
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var carouselCollectionView: UICollectionView!
